@@ -12,7 +12,7 @@ using namespace std;
 
 };*/
 
-struct order
+struct Order
 {
 
 
@@ -24,6 +24,7 @@ struct order
     char child_name[40];
     int room_no;
     char payment_status; // ‘y’ || ‘n’
+    char payment_proceed; // ‘y’ || ‘n’
 
 
 };
@@ -68,7 +69,7 @@ int main()
 
     cout << "\nRegistar with us from today!!      (Press 1)";
     cout << "\nDo you already have an account?    (Press 2)";
-    cout << "\nAdmin login                        (Press 3)";
+   
 
     cout << "\n\nToday I want......(Please Enter the number from above) : ";
     cin >> main_opt;
@@ -78,6 +79,7 @@ int main()
     case 1:
         cout << "\nLogin as parents   (Press 1)\n";
         cout << "\nLogin as staff     (Press 2)\n";
+        cout << "\nLogin as admin     (Press 3)\n";
         cout << "Login as ...... : "; cin >> main_login_as;
 
         if (main_login_as == 1)
@@ -87,6 +89,11 @@ int main()
         else if (main_login_as == 2)
         {
 
+        }
+        else if (main_login_as == 3)
+        {
+             admin_login();
+             admin_menu(Order_file);
         }
         else
         {
@@ -111,13 +118,6 @@ int main()
         {
             cout << "\nSorry try again....\n";
         }
-        break;
-
-    case 3:
-
-        void admin_login();
-        void admin_menu(fstream & Order_file);
-
         break;
 
     default:
